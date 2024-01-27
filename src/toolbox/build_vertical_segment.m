@@ -1,8 +1,8 @@
-function [trajectory, angle, segment_type] = build_vertical_segment(last_position, ...
+function [trajectory, deviation, segment_type] = build_vertical_segment(last_position, ...
     segment_length_md_in_m, ...
     segment_step_in_m)
 
-VERTICAL_ANGLE = 90.0;
+VERTICAL_DEVIAITION = 90.0;
 VERTICAL_SEGMENT_TYPE = SegmentType.Vertical;
 
 if not(size(last_position, 2) == 3)
@@ -19,7 +19,7 @@ end
                   y_last*ones(length(path),1),...
                   (path+z_last).'];
 
-    angle = VERTICAL_ANGLE * ones(length(path),1); 
+    deviation = VERTICAL_DEVIAITION * ones(length(path),1); 
 
     segment_type = repmat(VERTICAL_SEGMENT_TYPE, [length(path), 1]);
 end

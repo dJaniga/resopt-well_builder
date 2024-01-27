@@ -1,0 +1,6 @@
+function trajectory = move_well(trajectory, x_wellhead, y_wellhead)
+    trajectory = [trajectory(:,1) + x_wellhead,...
+                  trajectory(:,2) + y_wellhead,...
+                  trajectory(:,3)];
+end
+
